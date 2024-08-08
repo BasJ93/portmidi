@@ -53,7 +53,7 @@ namespace PortMidi
         public static extern MidiErrorType Pm_Poll(IntPtr stream);
 
         [DllImport("portmidi")]
-        public static extern int Pm_Read(IntPtr stream, IntPtr buffer, int length);
+        public static extern int Pm_Read(IntPtr stream, [In, Out] PmEvent[] buffer, int length);
 
         [DllImport("portmidi")]
         public static extern MidiErrorType Pm_Write(IntPtr stream, IntPtr buffer, int length);
